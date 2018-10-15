@@ -119,7 +119,43 @@ Promises:
 void UserApp1RunActiveState(void)
 {
   UserApp1_StateMachine();
+  static u16 u16BlinkCount=0;
+LedOff(WHITE);
+LedOff(PURPLE);
+LedOff(BLUE);
+LedOff(CYAN);
+LedOff(GREEN);
+LedOff(YELLOW);
+LedOff(ORANGE);
+LedOff(RED);
 
+u16BlinkCount++;
+if(u16BlinkCount>=0&&u16BlinkCount<=2000)
+{LedPWM(WHITE,LED_PWM_100);
+LedOff(GREEN);
+LedOn(WHITE);
+}
+if(u16BlinkCount>=2000&&u16BlinkCount<=3000)
+{LedPWM(PURPLE,LED_PWM_70);
+LedOff(WHITE);
+LedOn(PURPLE);
+}
+if(u16BlinkCount>=3000&&u16BlinkCount<=3500)
+{LedPWM(BLUE,LED_PWM_50);
+LedOff(PURPLE);
+LedOn(BLUE);
+}
+if(u16BlinkCount>=3500&&u16BlinkCount<=3750)
+{LedPWM(CYAN,LED_PWM_30);
+LedOff(BLUE);
+LedOn(CYAN);
+}
+if(u16BlinkCount>=3750&&u16BlinkCount<=3875)
+{LedPWM(GREEN,LED_PWM_10);
+LedOff(CYAN);
+LedOn(GREEN);
+static u16 u16BlinkCount=0;
+}
 } /* end UserApp1RunActiveState */
 
 
